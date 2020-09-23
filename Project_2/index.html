@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Project II - Exam Page</title>
+
+    <!-- Add a favicon -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- My JavaScript Code -->
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+    
+    <!--Add a navigation bar on top of the web page-->
+    <nav class="navbar navbar-expand-sm navbar-dark font-weight-bold mynavbar">
+        <div class="container-fluid mx-xl-5 px-xl-3">
+            <!--Add a exam logo to the navigation bar-->
+            <img src="images/baseline_menu_book_white_18dp.png" alt="Exam-logo" class="float-left img-fluid mr-sm-3">
+
+            <!--Add a brand (Project II) to the navigation bar. It can be used to go back to home page-->
+            <a class="navbar-brand" href="#">Project II - Exam</a>
+
+            <!--Add a button toggler, so when the navigation bar menu collapse the button shows the menu-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarOptions">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--The div tag contains the items (list) that will display the Options(Instructions and Help)
+            inside the toggler button once the navigation bar collapse -->
+            <div class="collapse navbar-collapse text-right" id="navbarOptions">
+                <ul class="navbar-nav ml-auto flex-nowrap font-weight-normal">
+                    <!--First element in the navigation bar. Links to Department page(not implemented)-->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" onclick="instructions()">Instructions</a>
+                    </li>
+                    <!--Second element in the navigation bar. Links to Help page(not implemented)-->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" onclick="help()">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Container for all the questions the exam will have -->
+    <div class="container mt-5" id="main-container">
+
+        <!-- ****************************** CARD FOR QUESTION NUMBER 1 ****************************************** -->
+        <div class="card">
+
+            <!-- Question statement -->
+            <div class="card-header my-card-header">
+                1. What HTML stands for?
+            </div>
+
+            <!-- This contains the form with the answer options -->
+            <div class="card-body">
+
+                <!-- Option A -->
+                <div class="form-check">
+                    <input type="radio" name="question1" id="1a" value="a" class="form-check-input">
+                    <label class="form-check-label" for="1a">
+                        Hypertext Machine Language
+                    </label>
+                </div>
+
+                <!-- Option B -->
+                <div class="form-check">
+                    <input type="radio" name="question1" id="1b" value="b" class="form-check-input">
+                    <label class="form-check-label" for="1b">
+                        Hypertext Makeup Language
+                    </label>
+                </div>
+
+                <!-- Option C -->
+                <div class="form-check">
+                    <input type="radio" name="question1" id="1c" value="c" class="form-check-input">
+                    <label class="form-check-label" for="1c">
+                        Hypertext Markup Language
+                    </label>
+                </div>
+
+                <!-- Option D -->
+                <div class="form-check">
+                    <input type="radio" name="question1" id="1d" value="d" class="form-check-input">
+                    <label class="form-check-label" for="1d">
+                        None of the above
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- ****************************** CARD FOR QUESTION NUMBER 2 ****************************************** -->
+        <div class="card mt-5">
+
+            <!-- Question statement -->
+            <div class="card-header my-card-header">
+                2. What HTML tag is used to add paragraphs?
+            </div>
+
+            <!-- This contains the form with the answer options -->
+            <div class="card-body">
+
+                <!-- Option A -->
+                <div class="form-check">
+                    <input type="radio" name="question2" id="2a" value="a" class="form-check-input">
+                    <label class="form-check-label" for="2a">
+                        &lt;img&gt;
+                    </label>
+                </div>
+
+                <!-- Option B -->
+                <div class="form-check">
+                    <input type="radio" name="question2" id="2b" value="b" class="form-check-input">
+                    <label class="form-check-label" for="2b">
+                        &lt;html&gt;
+                    </label>
+                </div>
+
+                <!-- Option C -->
+                <div class="form-check">
+                    <input type="radio" name="question2" id="2c" value="c" class="form-check-input">
+                    <label class="form-check-label" for="2c">
+                        &lt;p&gt;
+                    </label>
+                </div>
+
+
+                <!-- Option D -->
+                <div class="form-check">
+                    <input type="radio" name="question2" id="2d" value="d" class="form-check-input">
+                    <label class="form-check-label" for="2d">
+                        &lt;body&gt;
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- ****************************** CARD FOR QUESTION NUMBER 3 ****************************************** -->
+        <div class="card mt-5">
+
+            <!-- Question statement -->
+            <div class="card-header my-card-header">
+                3. Which section of the HTML document is used for text and tags that are shown directly on your web page?
+            </div>
+
+            <!-- This contains the form with the answer options -->
+            <div class="card-body">
+                <div class="form-check">
+
+                    <!-- Option A -->
+                    <input type="radio" name="question3" id="3a" value="a" class="form-check-input">
+                    <label class="form-check-label" for="3a">
+                        &lt;html&gt;
+                    </label>
+                </div>
+
+                <!-- Option B -->
+                <div class="form-check">
+                    <input type="radio" name="question3" id="3b" value="b" class="form-check-input">
+                    <label class="form-check-label" for="3b">
+                        &lt;body&gt;
+                    </label>
+                </div>
+
+                <!-- Option C -->
+                <div class="form-check">
+                    <input type="radio" name="question3" id="3c" value="c" class="form-check-input">
+                    <label class="form-check-label" for="3c">
+                        &lt;head&gt;
+                    </label>
+                </div>
+
+                <!-- Option D -->
+                <div class="form-check">
+                    <input type="radio" name="question3" id="3d" value="d" class="form-check-input">
+                    <label class="form-check-label" for="3d">
+                        &lt;script&gt;
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- ****************************** CARD FOR QUESTION NUMBER 4 ****************************************** -->
+        <div class="card mt-5">
+
+            <!-- Question statement -->
+            <div class="card-header my-card-header">
+                4. How can we add comments to a HTML document?
+            </div>
+
+            <!-- This contains the form with the answer options -->
+            <div class="card-body">
+
+                <!-- Option A -->
+                <div class="form-check">
+                    <input type="radio" name="question4" id="4a" value="a" class="form-check-input">
+                    <label class="form-check-label" for="4a">
+                        /* */
+                    </label>
+                </div>
+
+                <!-- Option B -->
+                <div class="form-check">
+                    <input type="radio" name="question4" id="4b" value="b" class="form-check-input">
+                    <label class="form-check-label" for="4b">
+                        //
+                    </label>
+                </div>
+
+                <!-- Option C -->
+                <div class="form-check">
+                    <input type="radio" name="question4" id="4c" value="c" class="form-check-input">
+                    <label class="form-check-label" for="4c">
+                        ##
+                    </label>
+                </div>
+
+                <!-- Option D -->
+                <div class="form-check">
+                    <input type="radio" name="question4" id="4d" value="d" class="form-check-input">
+                    <label class="form-check-label" for="4d">
+                        &lt;!-- --&gt;
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- ****************************** CARD FOR QUESTION NUMBER 5 ****************************************** -->
+        <div class="card mt-5">
+
+            <!-- Question statement -->
+            <div class="card-header my-card-header">
+                5. Which one is the correct CSS syntax?
+            </div>
+
+            <!-- This contains the form with the answer options -->
+            <div class="card-body">
+
+                <!-- Option A -->
+                <div class="form-check">
+                    <input type="radio" name="question5" id="5a" value="a" class="form-check-input">
+                    <label class="form-check-label" for="5a">
+                        selector {property: value}
+                    </label>
+                </div>
+
+                <!-- Option B -->
+                <div class="form-check">
+                    <input type="radio" name="question5" id="5b" value="b" class="form-check-input">
+                    <label class="form-check-label" for="5b">
+                        {selector: property: value}
+                    </label>
+                </div>
+
+                <!-- Option C -->
+                <div class="form-check">
+                    <input type="radio" name="question5" id="5c" value="c" class="form-check-input">
+                    <label class="form-check-label" for="5c">
+                        selector (property: value)
+                    </label>
+                </div>
+
+                <!-- Option D -->
+                <div class="form-check">
+                    <input type="radio" name="question5" id="5d" value="d" class="form-check-input">
+                    <label class="form-check-label" for="5d">
+                        selector [property= value]
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- ****************************** CARD FOR QUESTION NUMBER 6 ****************************************** -->
+        <div class="card mt-5">
+
+            <!-- Question statement -->
+            <div class="card-header my-card-header">
+                6. How can we add CSS styles to a web page?
+            </div>
+
+            <!-- This contains the form with the answer options -->
+            <div class="card-body">
+
+                <!-- Option A -->
+                <div class="form-check">
+                    <input type="checkbox" name="question6" id="6a" value="a" class="form-check-input">
+                    <label class="form-check-label" for="6a">
+                        inline
+                    </label>
+                </div>
+
+                <!-- Option B -->
+                <div class="form-check">
+                    <input type="checkbox" name="question6" id="6b" value="b" class="form-check-input">
+                    <label class="form-check-label" for="6b">
+                        include
+                    </label>
+                </div>
+
+                <!-- Option C -->
+                <div class="form-check">
+                    <input type="checkbox" name="question6" id="6c" value="c" class="form-check-input">
+                    <label class="form-check-label" for="6c">
+                        internal
+                    </label>
+                </div>
+
+                <!-- Option D -->
+                <div class="form-check">
+                    <input type="checkbox" name="question6" id="6d" value="d" class="form-check-input">
+                    <label class="form-check-label" for="6d">
+                        external
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- ****************************** CARD FOR QUESTION NUMBER 7 ****************************************** -->
+        <div class="card mt-5">
+
+            <!-- Question statement -->
+            <div class="card-header my-card-header">
+                7. Is CSS used for back-end web development?
+            </div>
+
+            <!-- This contains the form with the answer options -->
+            <div class="card-body">
+
+                <!-- Option A -->
+                <div class="form-check">
+                    <input type="radio" name="question7" id="7a" value="a" class="form-check-input">
+                    <label class="form-check-label" for="7a">
+                        True
+                    </label>
+                </div>
+
+                <!-- Option B -->
+                <div class="form-check">
+                    <input type="radio" name="question7" id="7b" value="b" class="form-check-input">
+                    <label class="form-check-label" for="7b">
+                        False
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- ****************************** CARD FOR QUESTION NUMBER 8 ****************************************** -->
+        <div class="card mt-5">
+
+            <!-- Question statement -->
+            <div class="card-header my-card-header">
+                8. The Bootstrap grid is based on how many columns?
+            </div>
+
+            <!-- This contains the form with the answer options -->
+            <div class="card-body">
+
+                <!-- Option A -->
+                <div class="form-check">
+                    <input type="radio" name="question8" id="8a" value="a" class="form-check-input">
+                    <label class="form-check-label" for="8a">
+                        9
+                    </label>
+                </div>
+
+                <!-- Option B -->
+                <div class="form-check">
+                    <input type="radio" name="question8" id="8b" value="b" class="form-check-input">
+                    <label class="form-check-label" for="8b">
+                        10
+                    </label>
+                </div>
+
+                <!-- Option C -->
+                <div class="form-check">
+                    <input type="radio" name="question8" id="8c" value="c" class="form-check-input">
+                    <label class="form-check-label" for="8c">
+                        12
+                    </label>
+                </div>
+
+                <!-- Option D -->
+                <div class="form-check">
+                    <input type="radio" name="question8" id="8d" value="d" class="form-check-input">
+                    <label class="form-check-label" for="8d">
+                        6
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- ****************************** CARD FOR QUESTION NUMBER 9 ****************************************** -->
+        <div class="card mt-5">
+
+            <!-- Question statement -->
+            <div class="card-header my-card-header">
+                9. Is Bootstrap mobile first?
+            </div>
+
+            <!-- This contains the form with the answer options -->
+            <div class="card-body">
+
+                <!-- Option A -->
+                <div class="form-check">
+                    <input type="radio" name="question9" id="9a" value="a" class="form-check-input">
+                    <label class="form-check-label" for="9a">
+                        True
+                    </label>
+                </div>
+
+                <!-- Option B -->
+                <div class="form-check">
+                    <input type="radio" name="question9" id="9b" value="b" class="form-check-input">
+                    <label class="form-check-label" for="9b">
+                        False
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- ****************************** CARD FOR QUESTION NUMBER 10 ****************************************** -->
+        <div class="card mt-5">
+
+            <!-- Question statement -->
+            <div class="card-header my-card-header">
+                10. Which Bootstrap button class is used to create a large button?
+            </div>
+
+            <!-- This contains the form with the answer options -->
+            <div class="card-body">
+
+                <!-- Option A -->
+                <div class="form-check">
+                    <input type="radio" name="question10" id="10a" value="a" class="form-check-input">
+                    <label class="form-check-label" for="10a">
+                        .btn-lg
+                    </label>
+                </div>
+
+                <!-- Option B -->
+                <div class="form-check">
+                    <input type="radio" name="question10" id="10b" value="b" class="form-check-input">
+                    <label class="form-check-label" for="10b">
+                        .btn-xl
+                    </label>
+                </div>
+
+                <!-- Option C -->
+                <div class="form-check">
+                    <input type="radio" name="question10" id="10c" value="c" class="form-check-input">
+                    <label class="form-check-label" for="10c">
+                        .btn-large
+                    </label>
+                </div>
+
+                <!-- Option D -->
+                <div class="form-check">
+                    <input type="radio" name="question10" id="10d" value="d" class="form-check-input">
+                    <label class="form-check-label" for="10d">
+                        f.btn-l
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Submition Button for grading -->
+        <div class="d-flex justify-content-center">
+            <a href="result.html" id="my_btn" class="my-btn" onclick="submit_test()">SUBMIT TEST</a>
+        </div>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer class="my-footer">
+        <div class="footer-div">
+            <p>ITSE 2402 - Project II - Fall 2020</p>
+            <p>© 2020 Jesus Villarroel</p>
+        </div>
+    </footer>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

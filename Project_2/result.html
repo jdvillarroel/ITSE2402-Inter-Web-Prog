@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Exam Result</title>
+
+    <!-- Add a favicon -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- My JavaScript Code -->
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+
+    <!--Add a navigation bar on top of the web page-->
+    <nav class="navbar navbar-expand-sm navbar-dark font-weight-bold px-4 mynavbar">
+        <div class="container-fluid mx-xl-5 px-xl-3">
+            <!--Add a exam logo to the navigation bar-->
+            <img src="images/baseline_menu_book_white_18dp.png" alt="Exam-logo" class="float-left img-fluid mr-sm-3">
+
+            <!--Add a brand (Project II) to the navigation bar. It can be used to go back to home page-->
+            <a class="navbar-brand" href="index.html">Project II - Exam</a>
+
+            <!--Add a button toggler, so when the navigation bar menu collapse the button shows the menu-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarOptions">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--The div tag contains the items (list) that will display the Options(Instructions and Help)
+                inside the toggler button once the navigation bar collapse -->
+            <div class="collapse navbar-collapse text-right" id="navbarOptions">
+                <ul class="navbar-nav ml-auto flex-nowrap font-weight-normal">
+                    <!--First element in the navigation bar. Links to Department page(not implemented)-->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" onclick="instructions()">Instructions</a>
+                    </li>
+                    <!--Second element in the navigation bar. Links to Help page(not implemented)-->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" onclick="help()">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Container for all the content in the results web page -->
+    <div class="container mt-5" id="main-container">
+
+        <div class="card">
+            <div class="card-header my-card-header">
+                <div class="d-flex justify-content-center h3" style="color: rgb(78, 74, 74);">Your score is:</div>
+            </div>
+
+            <div class="card-body">
+                <div class="d-flex justify-content-center" id="display-result">Score</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Return Home page button -->
+    <div class="d-flex justify-content-center">
+        <a href="index.html" id="back-btn" class="my-btn">GO BACK</a>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="my-footer result-footer">
+        <div class="footer-div">
+            <p>ITSE 2402 - Project II - Fall 2020</p>
+            <p>© 2020 Jesus Villarroel</p>
+        </div>
+    </footer>
+
+    <!--
+        JavaScript code to extract the value the score stored in the localStorage.
+    -->
+    <script>
+        let result = Number(localStorage.getItem("examScore"));
+        document.getElementById('display-result').textContent = result.toFixed(1) + " / 100";
+
+        //Resets the value in case the test form is used again
+        localStorage.setItem("examScore", 0);
+    </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
