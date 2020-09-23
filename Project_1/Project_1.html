@@ -1,0 +1,188 @@
+<!--
+    ITSE 2402 - Fall 2020
+    Project number 1: Project I Assignment
+
+    Author: Jesus Villarroel
+
+    Description:
+    Web page design using HTML, CSS, and Bootstrap. The page consist of a form with different fields that the user can
+    complete. No submition is required yet, but a web page with a response is included just to avoid an error mesagge.
+    The web page must be device friendly(should work appropiately on different devices).
+-->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <title>Project I Assignment</title>
+
+  <!--Link an external CSS stylesheet to the HTML Document-->
+  <link rel="stylesheet" href="./main.css" type="text/css">
+</head>
+
+<body>
+
+  <!--Add a navigation bar on top of the web page-->
+  <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: rgb(0, 0, 0);">
+
+    <!--Add the HCC logo to the navigation bar-->
+    <img src="./Images/HCC_logo.png" alt="HCC_logo" class="float-left img-fluid mr-sm-3">
+
+    <!--Add a brand (CourseForm) to the navigation bar. It can be used to go back to home page-->
+    <a class="navbar-brand" href="#">CourseForm</a>
+    
+    <!--Add a button toggler, so when the navigation bar menu collapse the button shows the menu-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarOptions">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--The div tag contains the items (list) that will display the Options(Dept and Help)
+        inside the toggler button once the navigation bar collapse
+    -->
+    <div class="collapse navbar-collapse" id="navbarOptions">
+      <ul class="navbar-nav">
+        <!--First element in the navigation bar. Links to Department page(not implemented)-->
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Dept</a>
+        </li>
+        <!--Second element in the navigation bar. Links to Help page(not implemented)-->
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Help</a>
+        </li>
+      </ul>
+    </div>
+
+    <!--Add form for the search area and button-->
+    <form class="form-inline">
+      <input type="search" class="form-control mr-sm-2" placeholder="Search" />
+      <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+
+  <!--Add a div tag with the container attribute to hold the main form-->
+  <div class="container">
+    <br>
+    <!--Insert a line break for better readability-->
+
+    <!--Main header for the page-->
+    <h1 class="display-4">Course</h1>
+
+    <!--
+      Main form of the web page. The form will have three rows by four columns. An additional
+      row with just two columns will be added for the large texboxes.
+    -->
+    <form>
+      <!--First row-->
+      <div class="form-row">
+        <!--Column 1-->
+        <div class="form-group col-sm-3">
+          <label for="courseiID">Course ID</label>
+          <input type="text" class="form-control" id="courseID"/>
+        </div>
+        <!--Column 2-->
+        <div class="form-group col-sm-3">
+          <label for="courseSubject">Course Subject</label>
+          <input type="text" class="form-control" id="courseSubject"/>
+        </div>
+        <!--Column 3-->
+        <div class="form-group col-sm-3">
+          <label for="courseNumber">Course Number</label>
+          <input type="text" class="form-control" id="courseNumber"/>
+        </div>
+        <!--Column 4-->
+        <div class="form-group col-sm-3">
+          <label for="courseTitle">Course Title</label>
+          <input type="text" class="form-control" id="courseTitle"/>
+        </div>
+      </div>
+
+      <!--Second row-->
+      <div class="form-row">
+        <!--Column 1-->
+        <div class="form-group col-sm-3">
+          <label for="courseiID">Course Credit</label>
+          <input type="text" class="form-control" id="courseCredit"/>
+        </div>
+        <!--Column 2-->
+        <div class="form-group col-sm-3">
+          <label for="courseSubject">Lecture Hour</label>
+          <input type="text" class="form-control" id="lectureHour"/>
+        </div>
+        <!--Column 3-->
+        <div class="form-group col-sm-3">
+          <label for="courseNumber">Lab Hour</label>
+          <input type="text" class="form-control" id="labHour"/>
+        </div>
+        <!--Column 4-->
+        <div class="form-group col-sm-3">
+          <label for="courseTitle">Max Contact Hour</label>
+          <input type="text" class="form-control" id="maxContactHour"/>
+        </div>
+      </div>
+
+      <!--Third row-->
+      <div class="form-row">
+        <!--Column 1-->
+        <div class="form-group col-sm-3">
+          <label for="courseiID">Course Type</label>
+          <input type="text" class="form-control" id="courseType"/>
+        </div>
+        <!--Column 2-->
+        <div class="form-group col-sm-3">
+          <label for="courseSubject">Discipline</label>
+          <input type="text" class="form-control" id="discipline"/>
+        </div>
+        <!--Column 3-->
+        <div class="form-group col-sm-3">
+          <label for="courseNumber">Course Designation</label>
+          <input type="text" class="form-control" id="courseDesignation"/>
+        </div>
+        <!--Column 4-->
+        <div class="form-group col-sm-3">
+          <label for="courseTitle">Texbook Reference</label>
+          <input type="text" class="form-control" id="texbookReference"/>
+        </div>
+      </div>
+
+      <!--Fourth row-->
+      <div class="form-row">
+        <!--Column 1-->
+        <div class="form-group col-sm-6">
+          <label for="courseiID">Course Description</label>
+          <textarea class="form-control" id="courseDescription" cols="30" rows="5">...</textarea>
+        </div>
+        <!--Column 2-->
+        <div class="form-group col-sm-6">
+          <label for="courseSubject">Learning Outcomes</label>
+          <textarea class="form-control" id="learningOutcomes" cols="30" rows="5">...</textarea>
+        </div>
+      </div>
+
+      <!--Add the two buttons to submit the form and cancel(clear) the form-->
+      <button type="reset" class="btn btn-warning">Cancel</button>
+      <button type="submit" class="btn btn-warning">Submit</button>
+    </form>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
