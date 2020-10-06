@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Custom CSS styles sheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Add font - Monserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Add favicon -->
+  <link rel="icon" href="images/favicon.ico">
+
+  <title>Project III - Game</title>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <!-- For extra large screens additional padding and margin added -->
+  <nav class="navbar navbar-expand-sm navbar-dark mx-xl-5 px-5">
+    <a class="navbar-brand ml-xl-4" href="#">
+      <img src="images/honor_diamond.png" width="100px" alt="game-logo">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-bar-menu"
+      aria-controls="nav-bar-menu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav-bar-menu">
+      <div class="navbar-nav ml-auto mr-xl-4">
+        <a class="nav-item nav-link" href="#">Instructions</a>
+        <a class="nav-item nav-link" href="#">About Me</a>
+      </div>
+
+    </div>
+
+  </nav>
+  <!-- Navigation Bar -->
+
+  <!-- Main Container -->
+  <div class="container">
+
+    <!-- Main Section -->
+    <section>
+
+      <h1 class="display-4 text-center my-headline">Add Them Up Game!</h1>
+
+      <!-- Game Board Container -->
+      <div class="container rounded w-md-75 text-center game-board">
+        <div class="dropdown">
+          <button class="btn btn-light dropdown-toggle mt-2" type="button" id="colorMenu" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Deck Color
+          </button>
+          <div class="dropdown-menu" aria-labelledby="colorMenu">
+            <a class="dropdown-item" href="#" id="blue">Blue</a>
+            <a class="dropdown-item" href="#" id="red">Red</a>
+            <a class="dropdown-item" href="#" id="green">Green</a>
+            <a class="dropdown-item" href="#" id="grey">Grey</a>
+            <a class="dropdown-item" href="#" id="yellow">Yellow</a>
+          </div>
+        </div>
+
+        <!-- Container for the game score -->
+        <div class="row my-2 my-md-1">
+
+          <!-- Extra div to add space for medium or larger screens -->
+          <div class="col-xs-0 col-md-2"></div>
+          <!-- Score Player 1 -->          
+          <!-- Breakpoint added at medium screens to add more space between score boxes -->
+          <div class="col col-md-2 my-score">
+            <p>Player 1</p>
+            <div>0</div>
+          </div>
+          <!-- Score Player 1 -->
+
+          <!-- Empty container just to add space between score containers -->
+          <div class="col col-md-4"></div>
+
+          <!-- Score Player 2 -->
+          <!-- Breakpoint added at medium screens to add more space between score boxes -->
+          <div class="col col-md-2 my-score">
+            <p>Player 2</p>
+            <div>0</div>
+          </div>
+          <!-- Score Player 2 -->
+          <!-- Extra div to add space for medium or larger screens -->
+          <div class="col-xs-0 col-md-2"></div>
+
+        </div>
+        <!-- Container for the game score -->
+
+        <!-- Cards container -->
+        <div class="row mx-auto my-4">
+
+          <div class="row mx-auto my-2">
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="00">
+            </div>
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="01">
+            </div>
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="02">
+            </div>
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="03">
+            </div>
+          </div>
+
+          <div class="row w-100"></div>
+
+          <div class="row mx-auto my-2">
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="10">
+            </div>
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="11">
+            </div>
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="12">
+            </div>
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="13">
+            </div>
+          </div>
+
+          <div class="row w-100"></div>
+
+          <div class="row mx-auto my-2">
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="20">
+            </div>
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="21">
+            </div>
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="22">
+            </div>
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="23">
+            </div>
+          </div>
+
+        </div>
+        <!-- Cards container -->
+
+        <div class="row w-100">
+          <button class="btn btn-light mx-auto px-4 font-weight-bold mb-2" type="button" onclick="resetButton()">RESET</button>
+          <button class="btn btn-primary mx-auto px-4 font-weight-bold mb-2" type="button" onclick="startButton()">START</button>
+        </div>
+
+
+      </div>
+      <!-- Game Board Container -->
+
+    </section>
+    <!-- Main Section -->
+
+  </div>
+  <!-- Main Container -->
+
+  <!-- Javascript Code -->
+  <script type="text/Javascript" src="js/main.js"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
