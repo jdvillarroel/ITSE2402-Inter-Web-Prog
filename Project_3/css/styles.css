@@ -87,7 +87,7 @@ body {
     justify-content: center;
     text-align: center;
     display: none;    
-    animation: winnerIn 2.5s;
+    animation: winnerIn 2s;
 }
 
 .winner-msg h3 {
