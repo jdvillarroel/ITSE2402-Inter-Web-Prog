@@ -62,8 +62,9 @@ body {
 }
 
 .card-container img {
-    border: solid 2px;
-    border-color: white;
+    border: solid 3px;
+    border-radius: 10px;
+    border-color: #CCC4E0;
     transition: all 0.8s ease-in-out;
 }
 
