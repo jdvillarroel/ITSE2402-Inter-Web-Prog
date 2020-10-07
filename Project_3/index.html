@@ -1,3 +1,14 @@
+<!--
+    ITSE 2402 - Fall 2020
+    Project III: Card Game
+
+    Author: Jesus Villarroel
+
+    Description:
+    Web page design using HTML, CSS, and Bootstrap. The page consist of a main container that holds a game board where
+    a set of 12 cards are displayed. Bootstrap is used to make sure the content is displayed appropiately on different
+    screen sizes.
+-->
 <!doctype html>
 <html lang="en">
 
@@ -38,8 +49,8 @@
 
     <div class="collapse navbar-collapse" id="nav-bar-menu">
       <div class="navbar-nav ml-auto mr-xl-4">
-        <a class="nav-item nav-link" href="#">Instructions</a>
-        <a class="nav-item nav-link" href="#">About Me</a>
+        <a class="nav-item nav-link" href="#" onclick="instructions()">Instructions</a>
+        <a class="nav-item nav-link" href="#" onclick="aboutMe()">About Me</a>
       </div>
 
     </div>
@@ -60,7 +71,7 @@
         <div class="dropdown">
           <button class="btn btn-light dropdown-toggle mt-2" type="button" id="colorMenu" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Deck Color
+            Card Deck Color
           </button>
           <div class="dropdown-menu" aria-labelledby="colorMenu">
             <a class="dropdown-item" href="#" id="blue">Blue</a>
@@ -105,33 +116,16 @@
 
           <div class="row mx-auto my-2">
             <div class="col mx-md-4 card-container">
-              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="00">
+              <img src="images/blue_back.png" alt="card-img" class="img-fluid mx-auto card"/>
             </div>
             <div class="col mx-md-4 card-container">
-              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="01">
+              <img src="images/blue_back.png" alt="card-img" class="img-fluid mx-auto card"/>
             </div>
             <div class="col mx-md-4 card-container">
-              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="02">
+              <img src="images/blue_back.png" alt="card-img" class="img-fluid mx-auto card"/>
             </div>
             <div class="col mx-md-4 card-container">
-              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="03">
-            </div>
-          </div>
-
-          <div class="row w-100"></div>
-
-          <div class="row mx-auto my-2">
-            <div class="col mx-md-4 card-container">
-              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="10">
-            </div>
-            <div class="col mx-md-4 card-container">
-              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="11">
-            </div>
-            <div class="col mx-md-4 card-container">
-              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="12">
-            </div>
-            <div class="col mx-md-4 card-container">
-              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="13">
+              <img src="images/blue_back.png" alt="card-img" class="img-fluid mx-auto card"/>
             </div>
           </div>
 
@@ -139,26 +133,54 @@
 
           <div class="row mx-auto my-2">
             <div class="col mx-md-4 card-container">
-              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="20">
+              <img src="images/blue_back.png" alt="card-img" class="img-fluid mx-auto card"/>
             </div>
             <div class="col mx-md-4 card-container">
-              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="21">
+              <img src="images/blue_back.png" alt="card-img" class="img-fluid mx-auto card"/>
             </div>
             <div class="col mx-md-4 card-container">
-              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="22">
+              <img src="images/blue_back.png" alt="card-img" class="img-fluid mx-auto card"/>
             </div>
             <div class="col mx-md-4 card-container">
-              <img src="images/blue_back.png" alt="" class="img-fluid mx-auto card" onclick="" id="23">
+              <img src="images/blue_back.png" alt="card-img" class="img-fluid mx-auto card"/>
+            </div>
+          </div>
+
+          <div class="row w-100"></div>
+
+          <div class="row mx-auto my-2">
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="card-img" class="img-fluid mx-auto card"/>
+            </div>
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="card-img" class="img-fluid mx-auto card"/>
+            </div>
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="card-img" class="img-fluid mx-auto card"/>
+            </div>
+            <div class="col mx-md-4 card-container">
+              <img src="images/blue_back.png" alt="card-img" class="img-fluid mx-auto card"/>
             </div>
           </div>
 
         </div>
         <!-- Cards container -->
 
+        <!-- Buttons -->
         <div class="row w-100">
           <button class="btn btn-light mx-auto px-4 font-weight-bold mb-2" type="button" onclick="resetButton()">RESET</button>
           <button class="btn btn-primary mx-auto px-4 font-weight-bold mb-2" type="button" onclick="startButton()">START</button>
         </div>
+        <!-- Buttons -->
+
+        <!-- Winner MEssage -->
+          <div class="winner-msg">
+            <div class="inner">
+              <img src="images/winner-cup.png" alt="winner-cup">
+            </div>
+            <h3>Player 0 WINS!!!</h3>
+            <p>🌟🌟🌟🌟</p>
+          </div>
 
 
       </div>
