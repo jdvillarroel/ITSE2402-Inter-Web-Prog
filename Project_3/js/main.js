@@ -122,10 +122,13 @@ function showWinnerMsg() {
     }else if(scorePlayer1 < scorePlayer2) {
         winner.textContent = 'Player 2 WINS!!!';
     }else {
-        winner.textContent = 'Game Tied!'
+        winner.textContent = 'Game Tied!';
+        
         /**
-         * if game is tied, the paragraph containing the stars wont be displayed.
+         * If game is tied, the paragraph containing the stars and the cup image
+         * wont be displayed.
          */
+        document.querySelector('.inner').style.display = 'none';
         document.querySelector('.winner-msg p').style.display = 'none';
     }
 
