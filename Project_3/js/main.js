@@ -21,7 +21,7 @@ let cardImg = [
     ['AD.png', 1], ['2D.png', 2], ['3D.png', 3], ['4D.png', 4], ['5D.png', 5], ['6D.png', 6], ['7D.png', 7], ['8D.png', 8], ['9D.png', 9], ['10D.png', 10], ['JD.png', 10], ['QD.png', 10], ['KD.png', 10]
 ];
 
-/**Gets all the elements that contain the cards on the board */
+/**Gets all the elements(img) that contain the cards on the board */
 let cards = document.getElementsByClassName('card');
 
 /** Gets the elements in the dropdown menu to select the card back color */
@@ -33,7 +33,7 @@ let cardClickedFlag = [];
 /** Used to track if the game has started. If started flag is true, false otherwise */
 let gameStarted = false;
 
-/** Used to determine whos player turn is. 1 = player 1, 2 = player 2 */
+/** Used to determine who's player turn is. 1 = player 1, 2 = player 2 */
 let player = 1;
 
 /** Holds the divs where the score will be displayed */
@@ -44,6 +44,9 @@ let playerTurn = document.querySelectorAll('.my-score p');
 
 /** Used to identify which player turn is */
 let playerColor = ['navy', 'crimson'];
+
+/** Holds a counter of both players turns to shown message at the end of the game */
+let gameCounter = 0;
 
 /**
  * Change the source file for the images in the card containers, changing the back color
@@ -80,25 +83,58 @@ function addDropDownEvents() {
 }
 
 /**
- * Sets the color of paragraph that identifies the players indicating whos turn is. The oposite
+ * Sets the color of paragraph that identifies the players indicating who's turn is. The opposite
  * player identifier is set to black. The index of the playerColor array is set using the player variable
- * which holds whos turn is. 1 for player 1 and 2 for player 2, so I subtract 1 to math the index of the
+ * which holds who's turn is. 1 for player 1 and 2 for player 2, so I subtract 1 to math the index of the
  * array.
  */
 function setTurnColor() {
     if(player == 1)
     {
-        playerTurn[0].style.color = playerColor[player - 1];
-        playerTurn[1].style.color = 'black';
+        playerTurn[0].style.color = playerColor[player - 1];    //Set current player color
+        playerTurn[1].style.color = '#343a40';
     }else {
-        playerTurn[1].style.color = playerColor[player - 1];
-        playerTurn[0].style.color = 'black';
+        playerTurn[1].style.color = playerColor[player - 1];    //Set current player color
+        playerTurn[0].style.color = '#343a40';
     }
 }
 
 /**
- * 
- * @param {*} randCardIndex 
+ * This function displays a message indicating the player who won the game.
+ * It gets the HTML elements (div container of the message and the h3) to
+ * modify their properties to display the message.
+ */
+function showWinnerMsg() {
+    /** Gets the HTML elements */
+    let winnerCup = document.querySelector('.winner-msg');
+    let winner = document.querySelector('.winner-msg h3');
+    
+    /** Gets the scores for each player */
+    let scorePlayer1 = parseInt(playerScore[0].textContent);
+    let scorePlayer2 = parseInt(playerScore[1].textContent);
+
+    /**
+     * Compare the scores of the players to determine which one is the winner. It modifies
+     * the h3 text content according to the winner.
+     */
+    if(scorePlayer1 > scorePlayer2) {
+        winner.textContent = 'Player 1 WINS!!!';
+    }else if(scorePlayer1 < scorePlayer2) {
+        winner.textContent = 'Player 2 WINS!!!';
+    }else {
+        winner.textContent = 'Game Tied!'
+    }
+
+    /** Makes the div container visible on the screen */
+    winnerCup.style.display = 'flex';
+}
+
+/**
+ * This functions gets the added value for the player, convert it to a number and add the new
+ * card value selected. The selected value is removed from the array(cardImg) that contains all
+ * the cards in play. Then, sets the turn to next player.
+ * @param {
+ * } randCardIndex 
  */
 function updateScore(randCardIndex) {
     if(player == 1)
@@ -111,6 +147,8 @@ function updateScore(randCardIndex) {
 
         /**Removed the card from the deck to avoid selecting it again */
         cardImg.splice(randCardIndex, 1);
+
+        gameCounter++;
 
         /** next player turn */
         player = 2;
@@ -125,14 +163,25 @@ function updateScore(randCardIndex) {
         /**Removed the card from the deck to avoid selecting it again */
         cardImg.splice(randCardIndex, 1);
 
+        gameCounter++;
+
         /** next player turn */
         player = 1;
         setTurnColor();
+
+        /**
+         * Checks if the game ended. As the player 1 always starts the game, player 2
+         * always will finish it. After 12 plays the game ends. It calls the function
+         * to display the winner.
+         */
+        if(gameCounter == 12) {
+            showWinnerMsg();
+        }
     }
 }
 
 /**
- * When a card is clicked(img) this function is called(added previosly by the method
+ * When a card is clicked(img) this function is called(added previously by the method
  * addEventListener). Since the eventListener cannot be removed to avoid multiple
  * clicks on the same card(img) a flag is used to know the card was already selected.
  * The source file for the image is replaced by a new image loaded from the array which
@@ -142,7 +191,7 @@ function updateScore(randCardIndex) {
 function discoverCard(cardIndex) {
     if(cardClickedFlag[cardIndex] == undefined)
     {
-        /** Makes falg true to avoid exceuting the code again */
+        /** Makes flag true to avoid executing the code again */
         cardClickedFlag[cardIndex] = true;
 
         /** Randomly select the index of the card */
@@ -151,16 +200,17 @@ function discoverCard(cardIndex) {
         /** Replace the image for the new one */
         cards[cardIndex].src = 'images/' + cardImg[randCardIndex][0];
 
+        /** Color is added to the card to identify which player played the card */
         cards[cardIndex].style.borderColor = playerColor[player - 1];
 
-        updateScore(randCardIndex);
+        updateScore(randCardIndex);       
 
         // console.log(`Card Clicked = ${cardIndex + 1}, rand = ${randCardIndex}`);  //Debugging purpose
     }        
 }
 
 /**
- * addEventListener method is used to add the functions that will be exceuted
+ * addEventListener method is used to add the functions that will be executed
  * when the image card is click on. I passed the index with function to identify
  * which card was clicked.
  */
@@ -184,16 +234,53 @@ function startButton() {
     addCardEvents();
 }
 
+/** Reloads the entire page to start the game again */
 function resetButton() {
     location.reload();
 }
 
+/** Automatic call of the function to add the events to the dropdown button */
 window.onload = function() {
     addDropDownEvents();
 }
 
+/**
+ * Print the game instructions.
+ */
+function instructions() {
+    alert(
+        "Add Them Up Instructions:\n\n\
+        The game consists of two players. Each player has the opportunity\n\
+        to discover a card from the board. The value of the card will be\n\
+        added to that player. Once the card is selected the other player\n\
+        will have the chance to pick his/her card. Once all cards are\n\
+        discovered the game will end, and the player who added the greater\n\
+        amount of card values will win the game.\n\n\
+        Each player is identified with a color. The text \"Player 1\" and\n\
+        \"Player 2\" text on the board will be colored according to who's\n\
+        player turn is.\n\
+        Player 1 always starts choosing first!\n\n\
+        ->  To start the game: \n\
+        1.  Select the color of your preference for the card deck.\n\
+        2.  Click the \"START\" button to start the game. Once the\n\
+            game has started the card deck color cannot be changed.\n\
+        3.  To reload the game click the \"RESET\" button."
 
+    );
+}
 
+/**
+ * Information about the author and project.
+ */
+function aboutMe() {
+    alert(
+        "Author: Jesus Villarroel\n\
+        Project #3 for:\n\
+        ITSE2402 - Intermediate Web Programming\n\
+        Fall 2020\n\
+        Houston Community College.\n"
+    );
+}
 
 
 
