@@ -123,6 +123,10 @@ function showWinnerMsg() {
         winner.textContent = 'Player 2 WINS!!!';
     }else {
         winner.textContent = 'Game Tied!'
+        /**
+         * if game is tied, the paragraph containing the stars wont be displayed.
+         */
+        document.querySelector('.winner-msg p').style.display = 'none';
     }
 
     /** Makes the div container visible on the screen */
@@ -257,7 +261,7 @@ function instructions() {
         discovered the game will end, and the player who added the greater\n\
         amount of card values will win the game.\n\n\
         Each player is identified with a color. The text \"Player 1\" and\n\
-        \"Player 2\" text on the board will be colored according to who's\n\
+        \"Player 2\" on the board will be colored according to who's\n\
         player turn is.\n\
         Player 1 always starts choosing first!\n\n\
         ->  To start the game: \n\
