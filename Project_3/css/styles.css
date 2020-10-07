@@ -12,7 +12,8 @@
     --bg-primary: #323232;
     --bg-primary50: rgba(50, 50, 51, 0.82);
     --bg-primary100: rgba(50, 50, 51, 0.71);
-    --secondary: #CBCAC3;
+    /* --secondary: #CBCAC3; */
+    --secondary: #CCC4E0;
     --accent: #007BFF;
 }
 
@@ -79,14 +80,14 @@ body {
     position: absolute;
     z-index: 10;
     top: 25%;
-    left: 25%;
-    transform: translate(13%, -10%);
+    left: 30%;
     box-shadow: 0 0 5px 1px #2AD9D9;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    display: none;
+    display: none;    
+    animation: winnerIn 2.5s;
 }
 
 .winner-msg h3 {
@@ -106,3 +107,18 @@ body {
     width: 100%;    
 }
 
+/* Add an animation for the winner message at the end of the game */ 
+@keyframes winnerIn {
+    0% {
+        transform: translateY(-200px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    75% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
