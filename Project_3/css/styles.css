@@ -1,19 +1,42 @@
+
+/* 
+    Project III - Card Game
+    ITSE 2402 - Fall 2020
+    Author: Jesus Villarroel
+
+    Add all the styles needed to give the web page an appealing look/
+*/
+
+/******************** Define CSS variables for the main colors used **********************/
+:root {
+    --bg-primary: #323232;
+    --bg-primary50: rgba(50, 50, 51, 0.82);
+    --bg-primary100: rgba(50, 50, 51, 0.71);
+    --secondary: #CBCAC3;
+    --accent: #007BFF;
+}
+
+/******************** Body Section ******************************************************/
 body {
-    background: linear-gradient(180deg, #323232 0%,
-    rgba(50, 50, 51, 0.82) 50%, rgba(50, 50, 51, 0.71) 100%);
+    background: linear-gradient(180deg, var(--bg-primary) 0%,
+    var(--bg-primary50) 50%, var(--bg-primary100) 100%);
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
 }
 
+/******************** Headline Section **************************************************/
 .my-headline {
     color: white;
     font-size: 2em;    
 }
 
+/******************** Game Board Section ************************************************/
 .game-board {
-    background: #B8B8B8;
+    background: var(--secondary);
+    position: relative;
 }
 
+/******************** Score Container Section *******************************************/
 .my-score {
     font-weight: bold;
 }
@@ -28,9 +51,10 @@ body {
 
 .my-score p {
     margin-bottom: 0.3rem;
+    color: #343a40;
 }
 
-
+/******************** Cards Container Section ******************************************/
 .card-container {
     width: 120px;
     position: relative;
@@ -39,27 +63,46 @@ body {
 .card-container img {
     border: solid 2px;
     border-color: white;
+    transition: all 0.8s ease-in-out;
 }
 
 .card-container:hover {
     cursor: pointer;
 }
 
-/* .card-value {
-    width: 120px;
-    position: relative;
+/******************** Popup Winner Message Section *************************************/
+.winner-msg {
+    background-color: #2AD9D9;
+    border-radius: 10px;
+    width: 40%;
+    height: 45%;
+    position: absolute;
+    z-index: 10;
+    top: 25%;
+    left: 25%;
+    transform: translate(13%, -10%);
+    box-shadow: 0 0 5px 1px #2AD9D9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    display: none;
 }
 
-.card-value::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-image: url(../images/AD.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    left: 0;
-} */
+.winner-msg h3 {
+    font-weight: 700;
+    margin-top: 10px;
+    color: #523698;
+    text-shadow: 0 0 4px rgba(216, 31, 130, 0.8);
+}
+
+.winner-msg .inner {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.inner img {
+    width: 100%;    
+}
+
