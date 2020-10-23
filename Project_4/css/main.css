@@ -1,0 +1,197 @@
+body {
+    background-color: #EDEDED;
+    /* font-family: 'Merriweather', serif; */
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+}
+
+/*  ===============================
+    Navigation Bar
+    ============================== */
+.navbar-brand {
+    font-family: 'Merriweather', serif;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.nav-item {
+    margin-left: 30px;
+}
+
+/*  ===============================
+    Data Section
+    ============================== */
+.row-container {
+    background-color: white;
+    border-radius: 10px;
+    margin: 3% 0;
+    box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.row-container h6 {
+    margin: 0 auto;
+    font-weight: 700;
+}
+
+.input-data {
+    border-radius: 5px;
+    /* border: none; */
+    width: 50px;
+}
+
+/*  ===============================
+    Chart Section
+    ============================== */
+.custom-select {
+    margin: 3% auto;
+    width: 150px;
+    border-color: #28A745;
+}
+
+/******************** Pie Chart Section ************************/
+.pie-container {
+    /* background-color: #EDEDED; */
+    border: 1px solid #EDEDED;
+    border-radius: 10px;
+    height: 350px;
+    width: 300px;
+    box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.svg-circle {
+    height: 200px;
+    width: 200px;
+}
+
+.pie-chart-title {
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+}
+
+.pie-chart-text {
+    font-family: 'Merriweather';
+    font-size: 12px;
+}
+
+.pie-chart-series {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 8px 5px;
+}
+
+/******************** Bar Chart Section ************************/
+.bar-container {
+    border: 1px solid #EDEDED;
+    border-radius: 10px;
+    height: 400px;
+    width: 600px;
+    box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.svg-bar-chart {
+    width: 95%;
+    height: 95%;
+    /* border: 1px solid; */
+}
+
+/******************** Bar chart axis section ********************/
+.x-axis-values {
+    font-family: 'Merriweather', serif;
+    font-size: 4px;
+    fill: #7A7A7A;
+}
+
+.y-axis-values {
+    font-family: 'Merriweather', serif;
+    font-size: 4px;
+    fill: #7A7A7A;
+}
+
+/******************** Bar chart legend section ********************/
+.bar-chart-legend {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 8px 16px;
+}
+
+.red-legend {
+    position: relative;
+}
+
+.red-legend:before {
+    content: '';
+    height: 6px;
+    width: 6px;
+    background-color: #E25A42;
+    border-radius: 50%;
+    position: absolute;
+    top: 30%;
+    left: -40%;
+}
+
+.green-legend {
+    position: relative;
+}
+
+.green-legend:before {
+    content: '';
+    height: 6px;
+    width: 6px;
+    background-color: #A0B700;
+    border-radius: 50%;
+    position: absolute;
+    top: 30%;
+    left: -40%;
+}
+
+.blue-legend {
+    position: relative;
+}
+
+.blue-legend:before {
+    content: '';
+    height: 6px;
+    width: 6px;
+    background-color: #4F81BD;
+    border-radius: 50%;
+    position: absolute;
+    top: 30%;
+    left: -40%;
+}
+
+/******************** Line Chart Section ************************/
+.line-container {
+    border: 1px solid #EDEDED;
+    border-radius: 10px;
+    height: 400px;
+    width: 600px;
+    box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.svg-line-chart {
+    width: 95%;
+    height: 95%;
+    /* border: 1px solid; */
+}
+
+/********************* Main button section *******************/
+.btn-success {
+    margin: 3% auto;
+    width: 150px;
+}

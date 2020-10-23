@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Project IV</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom styles sheet -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-success">
+    <div class="container">
+      <a class="navbar-brand" href="#">Project 4 - Charts</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Instructions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="row row-container">
+        <h6>Sample Data</h6>
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Data</th>
+              <th scope="col">Q1</th>
+              <th scope="col">Q2</th>
+              <th scope="col">Q3</th>
+              <th scope="col">Q4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Red</th>
+              <td><input class="input-data" type="number" min="0" max="160" value="10"></td>
+              <td><input class="input-data" type="number" value="20"></td>
+              <td><input class="input-data" type="number" value="30"></td>
+              <td><input class="input-data" type="number" value="40"></td>
+            </tr>
+            <tr>
+              <th scope="row">Green</th>
+              <td><input class="input-data" type="number" value="20"></td>
+              <td><input class="input-data" type="number" value="80"></td>
+              <td><input class="input-data" type="number" value="80"></td>
+              <td><input class="input-data" type="number" value="20"></td>
+            </tr>
+            <tr>
+              <th scope="row">Blue</th>
+              <td><input class="input-data" type="number" value="45"></td>
+              <td><input class="input-data" type="number" value="30"></td>
+              <td><input class="input-data" type="number" value="25"></td>
+              <td><input class="input-data" type="number" value="10"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="d-flex flex-column row-container">
+        <select class="custom-select">
+          <option selected value="pie">Pie Chart</option>
+          <option value="bar">Bar Chart</option>
+          <option value="line">Line Chart</option>
+        </select>
+
+        <!-- <div class="d-flex flex-wrap justify-content-around chart-container">
+          <div class="pie-container">
+            <h6 class="pie-chart-title">Red - Sample</h6>
+            <svg class="svg-circle" width="100" height="100" viewBox="-52 -52 104 104" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="0" cy="0" r="25" fill="none" stroke="#63A7B4" stroke-width="50" />
+            </svg>
+            <div class="pie-chart-series-container">
+              <p class="pie-chart-series"><span style="color: #4472C4;">Q1 = 10%</span></p>
+              <p class="pie-chart-series"><span style="color: #ED7D31;">Q2 = 20%</span></p>
+              <p class="pie-chart-series"><span style="color: #A5A5A5;">Q3 = 30%</span></p>
+              <p class="pie-chart-series"><span style="color: #FFC000;">Q4 = 40%</span></p>
+            </div>
+          </div>
+
+          <div class="pie-container">
+            <h6 class="pie-chart-title">Green - Sample</h6>
+            <svg class="svg-circle" width="100" height="100" viewBox="-52 -52 104 104" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="0" cy="0" r="25" fill="none" stroke="#63A7B4" stroke-width="50" />
+            </svg>
+            <div class="pie-chart-series-container">
+              <p class="pie-chart-series"><span style="color: #4472C4;">Q1 = 10%</span></p>
+              <p class="pie-chart-series"><span style="color: #ED7D31;">Q2 = 20%</span></p>
+              <p class="pie-chart-series"><span style="color: #A5A5A5;">Q3 = 30%</span></p>
+              <p class="pie-chart-series"><span style="color: #FFC000;">Q4 = 40%</span></p>
+            </div>
+          </div>
+
+          <div class="pie-container">
+            <h6 class="pie-chart-title">Blue - Sample</h6>
+            <svg class="svg-circle" width="100" height="100" viewBox="-52 -52 104 104" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="0" cy="0" r="25" fill="none" stroke="#63A7B4" stroke-width="50" />
+            </svg>
+            <div class="pie-chart-series-container">
+              <p class="pie-chart-series"><span style="color: #4472C4;">Q1 = 10%</span></p>
+              <p class="pie-chart-series"><span style="color: #ED7D31;">Q2 = 20%</span></p>
+              <p class="pie-chart-series"><span style="color: #A5A5A5;">Q3 = 30%</span></p>
+              <p class="pie-chart-series"><span style="color: #FFC000;">Q4 = 40%</span></p>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="d-flex flex-wrap justify-content-around chart-container">
+          <div class="bar-container">
+            <h6 class="pie-chart-title">Bar Chart</h6>
+            <svg class="svg-bar-chart" width="150" height="100" viewBox="-10 0 160 100" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <line x1="0" y1="10" x2="0" y2="90" stroke="#7A7A7A" stroke-width="0.5" />
+                <line x1="0" y1="90" x2="150" y2="90" stroke="#7A7A7A" stroke-width="0.5" />
+                <text class="x-axis-values" x="30" y="96" fill="black">Q1</text>
+                <text class="x-axis-values" x="60" y="96" fill="black">Q2</text>
+                <text class="x-axis-values" x="90" y="96" fill="black">Q3</text>
+                <text class="x-axis-values" x="120" y="96" fill="black">Q4</text>
+
+                <text class="y-axis-values" x="-10" y="90" fill="black">0</text>
+                <text class="y-axis-values" x="-10" y="80" fill="black">20</text>
+                <text class="y-axis-values" x="-10" y="70" fill="black">40</text>
+                <text class="y-axis-values" x="-10" y="60" fill="black">60</text>
+                <text class="y-axis-values" x="-10" y="50" fill="black">80</text>
+                <text class="y-axis-values" x="-10" y="40" fill="black">100</text>
+                <text class="y-axis-values" x="-10" y="30" fill="black">120</text>
+                <text class="y-axis-values" x="-10" y="20" fill="black">140</text>
+                <text class="y-axis-values" x="-10" y="10" fill="black">160</text>
+              </g>
+
+              <g>
+                <line x1="0" y1="80" x2="150" y2="80" stroke="#D1D1D1" stroke-width="0.25" />
+                <line x1="0" y1="70" x2="150" y2="70" stroke="#D1D1D1" stroke-width="0.25" />
+                <line x1="0" y1="60" x2="150" y2="60" stroke="#D1D1D1" stroke-width="0.25" />
+                <line x1="0" y1="50" x2="150" y2="50" stroke="#D1D1D1" stroke-width="0.25" />
+                <line x1="0" y1="40" x2="150" y2="40" stroke="#D1D1D1" stroke-width="0.25" />
+                <line x1="0" y1="30" x2="150" y2="30" stroke="#D1D1D1" stroke-width="0.25" />
+                <line x1="0" y1="20" x2="150" y2="20" stroke="#D1D1D1" stroke-width="0.25" />
+                <line x1="0" y1="10" x2="150" y2="10" stroke="#D1D1D1" stroke-width="0.25" />
+              </g>
+
+              <g>
+                <rect x="22" y="40" width="6" height="50" fill="#E25A42" />
+                <rect x="30" y="70" width="6" height="20" fill="#A0B700" />
+                <rect x="38" y="30" width="6" height="60" fill="#4F81BD" />
+
+                <rect x="52" y="40" width="6" height="50" fill="#E25A42" />
+                <rect x="60" y="70" width="6" height="20" fill="#A0B700" />
+                <rect x="68" y="30" width="6" height="60" fill="#4F81BD" />
+
+                <rect x="82" y="40" width="6" height="50" fill="#E25A42" />
+                <rect x="90" y="70" width="6" height="20" fill="#A0B700" />
+                <rect x="98" y="30" width="6" height="60" fill="#4F81BD" />
+
+                <rect x="112" y="40" width="6" height="50" fill="#E25A42" />
+                <rect x="120" y="70" width="6" height="20" fill="#A0B700" />
+                <rect x="128" y="30" width="6" height="60" fill="#4F81BD" />
+              </g>
+
+
+            </svg>
+            <div class="pie-chart-series-container">
+              <p class="bar-chart-legend red-legend"><span>Red</span></p>
+              <p class="bar-chart-legend green-legend"><span>Green</span></p>
+              <p class="bar-chart-legend blue-legend"><span>Blue</span></p>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-success" onclick="drawChart()">Draw Chart</button>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- Custom JavaScript Code -->
+  <script type="text/javascript" src="js/main.js"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
