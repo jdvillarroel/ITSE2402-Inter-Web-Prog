@@ -546,7 +546,30 @@ function drawLineChart() {
     /**
      * Draw the lines using the data from the table.
      */
+    for(let series = 0; series < 12; series = series + 4) {
+        for (let index = 0; index < 3; index ++) {
+            let line = document.createElementNS(XMLNS, 'line');
+    
+            let x1 = 30 + (30 * index);
+            let y1 = 90 - (data[1][index + series] * 0.5);
+            let x2 = x1 + 30;
+            let y2 = 90 - (data[1][index + series + 1] * 0.5);
+    
+            line.setAttribute('x1', `${x1}`);
+            line.setAttribute('y1', `${y1}`);
+            line.setAttribute('x2', `${x2}`);
+            line.setAttribute('y2', `${y2}`);
+            line.setAttribute('stroke', `${colors[(series / 4)]}`);
+            line.setAttribute('stroke-linecap', 'round');
+    
+            SVGLine.appendChild(line);
+        }
+    }
 
+    
+
+
+    
      
     
     // Creates the legend container for the chart.
