@@ -5,6 +5,10 @@ body {
     height: 100vh;
 }
 
+main {
+    position: relative;
+}
+
 /*  ===============================
     Navigation Bar
     ============================== */
@@ -55,11 +59,12 @@ body {
     border-radius: 10px;
     height: 350px;
     width: 300px;
+    margin-top: 15px;
     box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;    
 }
 
 .svg-circle {
@@ -194,4 +199,40 @@ body {
 .btn-success {
     margin: 3% auto;
     width: 150px;
+}
+
+/********************* Instructions section *******************/
+.instructions {
+    width: 50%;
+    background-color: #ffffff;
+    padding: 10px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: -2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+    border-left: solid 5px #28a745;
+    display: none;
+}
+
+.show-popup {
+    display: block;
+    animation: popup 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 900px)
+{
+    .instructions {
+        width: 80%;
+    }
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+
+    }
+    to {
+        opacity: 1;
+    }
 }
