@@ -19,6 +19,7 @@
 
   <!-- Custom styles sheet -->
   <link rel="stylesheet" href="css/main.css">
+  <!-- <link rel="stylesheet" href="css/styles.css"> -->
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico">
@@ -36,10 +37,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Instructions</a>
+            <a class="nav-link" href="#" onclick="showInstructions()">Instructions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#" onclick="about()">About</a>
           </li>
         </ul>
       </div>
@@ -63,24 +64,24 @@
           <tbody>
             <tr>
               <th scope="row">Red</th>
-              <td><input class="input-data" type="number" min="0" max="160" value="10"></td>
-              <td><input class="input-data" type="number" value="20"></td>
-              <td><input class="input-data" type="number" value="30"></td>
-              <td><input class="input-data" type="number" value="40"></td>
+              <td><input class="input-data" type="number" min="0" max="160" value="90"></td>
+              <td><input class="input-data" type="number" min="0" max="160" value="25"></td>
+              <td><input class="input-data" type="number" min="0" max="160" value="55"></td>
+              <td><input class="input-data" type="number" min="0" max="160" value="40"></td>
             </tr>
             <tr>
               <th scope="row">Green</th>
-              <td><input class="input-data" type="number" value="20"></td>
-              <td><input class="input-data" type="number" value="80"></td>
-              <td><input class="input-data" type="number" value="80"></td>
-              <td><input class="input-data" type="number" value="20"></td>
+              <td><input class="input-data" type="number" min="0" max="160" value="20"></td>
+              <td><input class="input-data" type="number" min="0" max="160" value="80"></td>
+              <td><input class="input-data" type="number" min="0" max="160" value="80"></td>
+              <td><input class="input-data" type="number" min="0" max="160" value="20"></td>
             </tr>
             <tr>
               <th scope="row">Blue</th>
-              <td><input class="input-data" type="number" value="45"></td>
-              <td><input class="input-data" type="number" value="30"></td>
-              <td><input class="input-data" type="number" value="25"></td>
-              <td><input class="input-data" type="number" value="10"></td>
+              <td><input class="input-data" type="number" min="0" max="160" value="45"></td>
+              <td><input class="input-data" type="number" min="0" max="160" value="30"></td>
+              <td><input class="input-data" type="number" min="0" max="160" value="25"></td>
+              <td><input class="input-data" type="number" min="0" max="160" value="10"></td>
             </tr>
           </tbody>
         </table>
@@ -93,7 +94,14 @@
           <option value="line">Line Chart</option>
         </select>
 
-        <!-- <div class="d-flex flex-wrap justify-content-around chart-container">
+        <!-- Before drawing the SVg graphs using javaScript, I hard coded the graphs to know how I will
+        have to add each element and attribute to the SVG. I commented the code but did not remove it,
+        so you have an idea how I came up with the javaScript code for each graph type. -->
+
+        <!-- This code will never be shown since the page onload draw the default graphs which are the 
+        pie charts -->
+
+        <div class="d-flex flex-wrap justify-content-around chart-container">
           <div class="pie-container">
             <h6 class="pie-chart-title">Red - Sample</h6>
             <svg class="svg-circle" width="100" height="100" viewBox="-52 -52 104 104" fill="none"
@@ -135,7 +143,7 @@
               <p class="pie-chart-series"><span style="color: #FFC000;">Q4 = 40%</span></p>
             </div>
           </div>
-        </div> -->
+        </div>
 
         <!-- <div class="d-flex flex-wrap justify-content-around chart-container">
           <div class="bar-container">
@@ -200,7 +208,10 @@
           </div>
         </div> -->
 
-        <div class="d-flex flex-wrap justify-content-around chart-container">
+        <!-- This code will never be shown since the page onload draw the default graphs which are the 
+        pie charts -->
+
+        <!-- <div class="d-flex flex-wrap justify-content-around chart-container">
           <div class="line-container">
             <h6 class="pie-chart-title">Bar Chart</h6>
             <svg class="svg-line-chart" width="150" height="100" viewBox="-10 0 160 100" fill="none"
@@ -256,11 +267,41 @@
               <p class="bar-chart-legend blue-legend"><span>Blue</span></p>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <button type="button" class="btn btn-success" onclick="drawChart()">Draw Chart</button>
       </div>
     </div>
+
+
+      <div class="instructions">
+        <h4 class="text-center text-uppercase my-3">Instructions</h4>
+        <div class="container px-lg-5">
+          <p>
+            There are three (3) types of charts that can be displayed. By default the pie chart type
+            is shown. You can re-draw the charts as many times as needed.
+          </p>
+          <p>
+            It is simple to draw a chart. First, select the type chart which you desire to draw. Then,
+            press the <strong>Draw Chart</strong> button.
+          </p>
+          <p>
+            <strong>Notes:</strong> 
+          </p>
+          <ol>
+            <li>The data in the table on top of the page can be changed, but it only accept positive
+              values up to <strong>160</strong>.
+            </li>
+            <li>
+              The pie chart represents the data as a percentage of the total, not absolute values.
+            </li>
+          </ol>
+
+          <button type="button" class="btn btn-outline-dark mx-auto" onclick="closeInstructions()">Close</button>
+        </div>
+        
+      </div>
+
   </main>
 
 
