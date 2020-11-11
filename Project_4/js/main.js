@@ -7,7 +7,6 @@ const XMLNS = 'http://www.w3.org/2000/svg';
 const radius = 25;
 const CIRCUMFERENCE = 2 * 3.141592 * radius;
 
-// let colors = ['#E6842A', '#E25A42', '#0F8C79', '#A0B700'];
 let colors = ['#E25A42', '#A0B700', '#4F81BD', '#E6842A'];
 
 let pieDataAreas;
@@ -87,6 +86,35 @@ let pieChartObject = {
 }
 
 /**
+ * Toggle the show-popup class to display and hide the instructions.
+ */
+function showInstructions() {
+    let instructions = document.querySelector('.instructions');
+
+    instructions.classList.toggle('show-popup');
+}
+
+/**
+ * Remove the show-popup class to hide the instructions container.
+ */
+function closeInstructions() {
+    let instructions = document.querySelector('.instructions');
+
+    instructions.classList.remove('show-popup');
+}
+
+/**
+ * Show extra information about the project and the author.
+ */
+function about() {
+    alert(
+        'PROJECT 4 - ITSE2402\n\n\
+    Fall 2020\n\
+    Author: Jesus Villarroel\n'
+    );
+}
+
+/**
  * Gets the data contained in the table to draw the charts.
  * It returns an object that contains the data series and its respective value as
  * a percentage of the total.
@@ -126,7 +154,7 @@ function getData() {
 }
 
 /**
- * Removes the existing chart containers to add the new charts.
+ * Removes the existing chart container to add the new charts.
  */
 function removeChart() {
     let parent = document.querySelector('.chart-container');
@@ -372,21 +400,28 @@ function drawBarChart() {
      * Draw the bars using the data from the table.
      */
      for(let series = 0; series < 12; series = series + 4) {
+         // gap between bars is 8 units.
          let gap = 8;
 
+        // 3 rectangles are drawn for each quarter (Q1 Q2 Q3 Q4).
+        // This loop add the bars(rectangles) elements with all its attributes to the SVG element
+        // previously created. This loop is executed 4 times(Q1 Q2 Q3 Q4) as per the outer for loop.
         for(let index = 0; index < 4; index++) {
-            let rectHeight = data[1][(index + series)] * 0.5;
+            let rectHeight = data[1][(index + series)] * 0.5;       //0.5 scales down the data to fit the SVG drawing area
+
+            // In the x axis each group of data (Q1 ... Q4) is separated 30 units from each other. This equation
+            // considers the gap between each bar.
             let xCoordinateBase = 22 + (gap * series / 4);
             let yCoordinate = 90 - rectHeight;
             
-            let redRectangle = document.createElementNS(XMLNS, 'rect');
-            redRectangle.setAttribute('width', '6');
-            redRectangle.setAttribute('fill', `${colors[series/4]}`);
-            redRectangle.setAttribute('x', `${xCoordinateBase + (30 * index)}`);
-            redRectangle.setAttribute('y', `${yCoordinate}`);        
-            redRectangle.setAttribute('height', `${rectHeight}`);
+            let rectangle = document.createElementNS(XMLNS, 'rect');
+            rectangle.setAttribute('width', '6');
+            rectangle.setAttribute('fill', `${colors[series/4]}`);
+            rectangle.setAttribute('x', `${xCoordinateBase + (30 * index)}`);
+            rectangle.setAttribute('y', `${yCoordinate}`);        
+            rectangle.setAttribute('height', `${rectHeight}`);
     
-            SVGBar.appendChild(redRectangle);        
+            SVGBar.appendChild(rectangle);        
         }
 
      }
@@ -547,11 +582,18 @@ function drawLineChart() {
      * Draw the lines using the data from the table.
      */
     for(let series = 0; series < 12; series = series + 4) {
+        // 3 lines will be drawn. One for each series(red, green, blue).
+        // This loop add the line elements with all its attributes to the SVG element
+        // previously created. This loop is executed 4 times(Q1 Q2 Q3 Q4) as per the outer for loop.
         for (let index = 0; index < 3; index ++) {
             let line = document.createElementNS(XMLNS, 'line');
     
+            // As the coordinate system of the SVG graphics goes from top to bottom for the y(positive)
+            // coordinates, the y coordinates of the lines have to be subtracted from the maximum
+            // value of the height of the SVG drawing area.
+            // In the x axis the values are separated 30 units from each other.
             let x1 = 30 + (30 * index);
-            let y1 = 90 - (data[1][index + series] * 0.5);
+            let y1 = 90 - (data[1][index + series] * 0.5);  // the 0.5 is to scale down to the SVG graph area
             let x2 = x1 + 30;
             let y2 = 90 - (data[1][index + series + 1] * 0.5);
     
@@ -565,12 +607,6 @@ function drawLineChart() {
             SVGLine.appendChild(line);
         }
     }
-
-    
-
-
-    
-     
     
     // Creates the legend container for the chart.
     let legendContainer = document.createElement('div');
@@ -596,9 +632,14 @@ function drawLineChart() {
 function drawChart() {
     // Gets the data from the table
     // pieDataAreas = getData();
-    data = getData();
+    // data is an array of two elements containing the values gotten from the table.
+    // The first element in the array that contains the values as percentages of the total as they
+    // will be used in the pie chart. The second element is an array containing the raw data. Those
+    // will be used for the bar chart and line chart.
+    data = getData();           // return an array of arrays
 
     // Removes default charts to draw the one(s) containing the data.
+    // Before any chart can be drawn, the previous chart is removed.
     removeChart();
 
     /**
@@ -631,3 +672,4 @@ function drawChart() {
 window.onload = function() {
     drawChart();
 }
+
